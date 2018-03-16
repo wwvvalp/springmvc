@@ -37,7 +37,7 @@
 
     <!--配置切面-->
     <aop:config>
-        <aop:pointcut id="txPointcut" expression="execution(* com.gwt.service.*.*(..) )"/>
+        <aop:pointcut id="txPointcut" expression="execution(* com.gwt.service.impl.*.*(..) )"/>
         <aop:advisor advice-ref="txAdvice" pointcut-ref="txPointcut"/>
     </aop:config>
 
