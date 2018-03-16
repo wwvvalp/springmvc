@@ -11,8 +11,11 @@
         <!-- 自定义转换器 -->
         <mvc:message-converters>
             <bean class="com.gwt.jackson.CallbackMappingJackson2HttpMessageConverter">
-                <!-- 配置获取参数的名称，动态，更加灵活 -->
                 <property name="callbackName" value="callback"/>
+            </bean>
+            <!--返回前端utf-8编码-->
+            <bean class="org.springframework.http.converter.StringHttpMessageConverter">
+                <constructor-arg value ="UTF-8"/>
             </bean>
         </mvc:message-converters>
     </mvc:annotation-driven>
