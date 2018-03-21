@@ -2,8 +2,34 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.gwt.dao.UserDao">
+    <sql id="generalColumn">
+        dept_id,
+        name,
+        age,
+        password
+    </sql>
+    <sql id="allFields">
+        id,
+        dept_id,
+        name,
+        age,
+        password
+    </sql>
 
     <select id="findUser" resultType="User">
-        SELECT * FROM USER
+        SELECT
+        <include refid="allFields"/>
+        FROM USER
     </select>
+
+    <select id="getUserById" resultType="User">
+        SELECT
+        <include refid="allFields"/>
+        FROM user where id=#{id}
+    </select>
+
+    <insert id="addUser">
+        INSERT INTO user (<include refid="generalColumn"/>) VALUES (#{deptId},#{name},#{age},#{password})
+    </insert>
+
 </mapper>

@@ -1,7 +1,10 @@
 package com.gwt.pojo;
 
+import java.util.List;
+
 public class User {
     private Long id;
+    private Long DeptId;
     private String name;
     private Integer age;
     private String password;
@@ -12,6 +15,14 @@ public class User {
 
     public void setId(Long id) {
         this.id = id;
+    }
+
+    public Long getDeptId() {
+        return DeptId;
+    }
+
+    public void setDeptId(Long deptId) {
+        DeptId = deptId;
     }
 
     public String getName() {
@@ -42,6 +53,7 @@ public class User {
     public String toString() {
         return "User{" +
                 "id=" + id +
+                ", DeptId=" + DeptId +
                 ", name='" + name + '\'' +
                 ", age=" + age +
                 ", password='" + password + '\'' +

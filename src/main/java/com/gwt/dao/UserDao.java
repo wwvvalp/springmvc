@@ -8,4 +8,8 @@ import java.util.List;
 public interface UserDao {
 
     List<User> findUser();
+
+    User getUserById(Integer id);
+
+    void addUser(User user);
 }
